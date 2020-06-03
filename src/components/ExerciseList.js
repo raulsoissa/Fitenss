@@ -1,24 +1,23 @@
 import React from 'react';
 import Card from './Card'
 
-function ExerciseList(props) {
-    return (
-        <div className="">
-            {props.exercises.map((exercise) => {
-                return (
-                    <Card
-                        title={exercise.title}
-                        description={exercise.description}
-                        image={exercise.img}
-                        leftColor={exercise.leftColor}
-                        rightColor={exercise.rightColor}
-                    />
-                )
-            })
+const ExerciseList = ({exercises}) => (
+    <div className="">
+        {exercises.map((exercise) => {
+            return (
+                <Card 
+                    key={exercise.id}
+                    title={exercise.title}
+                    description={exercise.description}
+                    image={exercise.img}
+                    leftColor={exercise.leftColor}
+                    rightColor={exercise.rightColor}
+                />
+            )
+        })
 
-            }
-        </div>
-    )
-}
+        }
+    </div>
+)
 
 export default ExerciseList;
